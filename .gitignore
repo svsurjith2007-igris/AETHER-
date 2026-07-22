@@ -1,0 +1,12 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+# Virtual environment
+.venv/
+# VS Code
+.vscode/
+# Mac/Linux
+.DS_Store
+# Python packaging
+*.egg-info/
+*.dist-info/
