@@ -28,7 +28,7 @@ const questions = [
     solution: `def max_subarray(nums):\n    best = current = nums[0]\n    for x in nums[1:]:\n        current = max(x, current + x)\n        best = max(best, current)\n    return best\n`,
   },
   {
-    id: 'q2',
+    id: 'q2', 
     title: 'Word Search Backtracking',
     topic: 'backtracking',
     difficulty: 'hard',
