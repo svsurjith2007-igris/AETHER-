@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Question Generator Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <header class="app-header">
+      <div>
+        <h1>AI Interview Question Generator</h1>
+        <p>Scrape, categorize and download programming questions with full details, tags, examples and solutions.</p>
+      </div>
+      <div class="header-actions">
+        <button id="logoutButton" class="secondary-btn">Log Out</button>
+        <button id="downloadButton" class="primary-btn" disabled>Download Selected JSON</button>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="control-group">
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="search" placeholder="Search by title, company, topic or difficulty" />
+      </div>
+
+      <div class="control-group">
+        <label>Topic</label>
+        <select id="topicFilter">
+          <option value="all">All Topics</option>
+          <option value="dp">Dynamic Programming</option>
+          <option value="backtracking">Backtracking</option>
+          <option value="greedy">Greedy</option>
+          <option value="divideconquer">Divide and Conquer</option>
+          <option value="twopointers">Two Pointers</option>
+          <option value="ml">Machine Learning</option>
+          <option value="os">Operating Systems</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Difficulty</label>
+        <select id="difficultyFilter">
+          <option value="all">All Levels</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Company</label>
+        <select id="companyFilter">
+          <option value="all">All Companies</option>
+          <option value="general">General</option>
+          <option value="google">Google</option>
+          <option value="amazon">Amazon</option>
+          <option value="facebook">Meta</option>
+          <option value="microsoft">Microsoft</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="question-list" id="questionList"></section>
+
+    <template id="questionCardTemplate">
+      <article class="question-card">
+        <header class="question-card__header">
+          <div>
+            <h2 class="question-title"></h2>
+            <div class="question-meta">
+              <span class="tag topic-tag"></span>
+              <span class="tag difficulty-tag"></span>
+              <span class="tag company-tag"></span>
+            </div>
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" class="question-checkbox" />
+            Select
+          </label>
+        </header>
+
+        <section class="question-details">
+          <p class="question-description"></p>
+          <div class="example-block">
+            <h3>Example</h3>
+            <pre class="question-example"></pre>
+          </div>
+          <div class="constraints-block">
+            <h3>Constraints</h3>
+            <ul class="question-constraints"></ul>
+          </div>
+          <div class="testcases-block">
+            <h3>Test Cases</h3>
+            <ol class="question-testcases"></ol>
+          </div>
+          <div class="solution-block">
+            <h3>Python Solution</h3>
+            <pre class="question-solution"></pre>
+          </div>
+        </section>
+      </article>
+    </template>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

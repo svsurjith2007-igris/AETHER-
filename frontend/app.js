@@ -398,6 +398,10 @@ const questions = [
   },
 ];
 
+if (!localStorage.getItem('isLoggedIn')) {
+  window.location.href = 'login.html';
+}
+
 const questionList = document.querySelector('#questionList');
 const downloadButton = document.querySelector('#downloadButton');
 const searchInput = document.querySelector('#searchInput');
@@ -405,6 +409,18 @@ const topicFilter = document.querySelector('#topicFilter');
 const difficultyFilter = document.querySelector('#difficultyFilter');
 const companyFilter = document.querySelector('#companyFilter');
 const template = document.querySelector('#questionCardTemplate');
+const logoutButton = document.querySelector('#logoutButton');
+
+if (!localStorage.getItem('isLoggedIn')) {
+  window.location.href = 'index.html';
+}
+
+if (logoutButton) {
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'index.html';
+  });
+}
 
 function renderQuestions(items) {
   questionList.innerHTML = '';
